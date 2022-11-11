@@ -41,14 +41,18 @@ void setup()
   pinMode(waveout, OUTPUT);
   digitalWrite(OUTPUT, LOW);
 
-  for(;;)
+  while (timeInfo.tm_sec != 50)
   {
-    getLocalTime(&timeInfo);
-    if ((int)timeInfo.tm_sec == 50)
+    nowtime();
+    for (int i = 0; i < 10; i++)
     {
-      break;
+      getLocalTime(&timeInfo);
+      if ((int)timeInfo.tm_sec == 50)
+      {
+        return;
+      }
+      delay(100);
     }
-    
   }
 }
 
