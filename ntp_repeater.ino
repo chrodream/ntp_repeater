@@ -1,8 +1,8 @@
 #include <WiFi.h>
 #define waveout 23
 
-const char ssid[] = "ctc-g-e43584";
-const char password[] = "6b5f9ab54467a";
+const char ssid[] = "Test-Network";
+const char password[] = "Chro-test";
 
 struct tm timeInfo;
 
